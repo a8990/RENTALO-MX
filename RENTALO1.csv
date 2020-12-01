@@ -1,0 +1,4 @@
+*** Test Cases ***;${machinename};[Tags];[Documentation]
+Busca maquinaria por nombre completo Valido;BOBCAT T590;TC1.1,POR MAQUINARIA, VALIDO;Caso de prueba seleccionando del dropdown list
+Busca maquinaria por nombre incompleto Valido;BOBCAT;TC1.2,POR MAQUINARIA, VALIDO;Caso de prueba seleccionando del dropdown list
+Busca maquinaria por Modelo Valido;T590;TC1.3,POR MODELO,VALIDO;Caso de prueba seleccionando del dropdown list

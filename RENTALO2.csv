@@ -1,0 +1,4 @@
+*** Test Cases ***;${machinename};[Tags];[Documentation]
+Busca maquinaria por nombre completo No valido;BOBKAT T590;POR MAQUINARIA,TC2.1,3,NO VALIDO;Caso de prueba sin valores en dropdown list
+Busca maquinaria por nombre incompleto No Valido;BOCAT T;POR MAQUINARIA,TC2.2, NO VALIDO;Caso de prueba sin valores en dropdown list
+Busca maquinaria por Modelo No Valido;XC590;1,POR MAQUINARIA,TC2.3,NO VALIDO;Caso de prueba sin valores en dropdown list

@@ -1,0 +1,2090 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.9 on win32)" generated="20201130 21:42:00.616" rpa="false">
+<suite id="s1" name="RENTALO-MX" source="D:\Projects\Automation\Robot Framewrok\RENTALO-MX">
+<suite id="s1-s1" name="Tests" source="D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests">
+<suite id="s1-s1-s1" name="Rentalo FlujoAlternativo" source="D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_FlujoAlternativo.robot">
+<test id="s1-s1-s1-t1" name="Buscar - usando">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:42:01.597" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:42:01.596" endtime="20201130 21:42:04.898"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:01.596" endtime="20201130 21:42:04.899"></status>
+</kw>
+<kw name="Busqueda">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:04.900" level="FAIL">Variable '${machinename}' not found.</msg>
+<status status="FAIL" starttime="20201130 21:42:04.900" endtime="20201130 21:42:04.901"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:42:04.902" endtime="20201130 21:42:07.108"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:04.901" endtime="20201130 21:42:07.109"></status>
+</kw>
+<status status="FAIL" starttime="20201130 21:42:01.595" endtime="20201130 21:42:07.114" critical="yes">Variable '${machinename}' not found.</status>
+</test>
+<doc>Suite de pruebas para Rentalo.com.mx</doc>
+<status status="FAIL" starttime="20201130 21:42:00.656" endtime="20201130 21:42:07.126"></status>
+</suite>
+<suite id="s1-s1-s2" name="Rentalo FlujoBasico" source="D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_FlujoBasico.robot">
+<test id="s1-s1-s2-t1" name="Busca maquinaria por nombre completo Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:42:07.332" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:42:07.332" endtime="20201130 21:42:10.731"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:07.331" endtime="20201130 21:42:10.732"></status>
+</kw>
+<kw name="Busqueda">
+<arguments>
+<arg>BOBCAT T590</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:10.735" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:42:10.734" endtime="20201130 21:42:11.583"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:10.733" endtime="20201130 21:42:11.583"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:11.584" endtime="20201130 21:42:11.603"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:11.584" endtime="20201130 21:42:11.603"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:11.604" level="INFO">Typing text 'BOBCAT T590' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:42:11.604" endtime="20201130 21:42:11.733"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:11.604" endtime="20201130 21:42:11.733"></status>
+</kw>
+<kw name="El buscador despliega opciones para autocompletar" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:[class="flex items-center p-4 hover:bg-gray-200"]</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:11.734" endtime="20201130 21:42:12.399"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:42:12.720" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:42:12.399" endtime="20201130 21:42:12.720"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:11.733" endtime="20201130 21:42:12.720"></status>
+</kw>
+<kw name="Seleccionar opción del nombre desplegado" library="search_resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[@href="/equipment/bobcat-t590"]</arg>
+</arguments>
+<msg timestamp="20201130 21:42:12.721" level="INFO">Clicking link 'xpath=//a[@href="/equipment/bobcat-t590"]'.</msg>
+<status status="PASS" starttime="20201130 21:42:12.720" endtime="20201130 21:42:12.812"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:12.720" endtime="20201130 21:42:12.812"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:10.733" endtime="20201130 21:42:12.813"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:42:12.827" endtime="20201130 21:42:15.089"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:12.827" endtime="20201130 21:42:15.090"></status>
+</kw>
+<doc>Caso de prueba que incluye Flujo Basico - Nombre completo de maquinaria valido</doc>
+<tags>
+<tag>POR MAQUINARIA</tag>
+<tag>TC1.1</tag>
+<tag>VALIDO</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:42:07.329" endtime="20201130 21:42:15.093" critical="yes"></status>
+</test>
+<test id="s1-s1-s2-t2" name="Busca maquinaria por nombre incompleto Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:42:15.122" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:42:15.121" endtime="20201130 21:42:18.652"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:15.121" endtime="20201130 21:42:18.652"></status>
+</kw>
+<kw name="Busqueda">
+<arguments>
+<arg>BOBCAT</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:18.654" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:42:18.654" endtime="20201130 21:42:19.393"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:18.654" endtime="20201130 21:42:19.393"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:19.394" endtime="20201130 21:42:19.409"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:19.394" endtime="20201130 21:42:19.409"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:19.411" level="INFO">Typing text 'BOBCAT' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:42:19.410" endtime="20201130 21:42:19.519"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:19.409" endtime="20201130 21:42:19.519"></status>
+</kw>
+<kw name="El buscador despliega opciones para autocompletar" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:[class="flex items-center p-4 hover:bg-gray-200"]</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:19.520" endtime="20201130 21:42:20.212"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:42:20.617" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:42:20.212" endtime="20201130 21:42:20.618"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:19.519" endtime="20201130 21:42:20.618"></status>
+</kw>
+<kw name="Seleccionar opción del nombre desplegado" library="search_resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[@href="/equipment/bobcat-t590"]</arg>
+</arguments>
+<msg timestamp="20201130 21:42:20.620" level="INFO">Clicking link 'xpath=//a[@href="/equipment/bobcat-t590"]'.</msg>
+<status status="PASS" starttime="20201130 21:42:20.619" endtime="20201130 21:42:20.684"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:20.618" endtime="20201130 21:42:20.684"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:18.653" endtime="20201130 21:42:20.684"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:42:20.687" endtime="20201130 21:42:22.957"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:20.687" endtime="20201130 21:42:22.958"></status>
+</kw>
+<doc>Caso de prueba que incluye Flujo Basico y Alternativo A2 - Nombre incompleto de maquinaria valido </doc>
+<tags>
+<tag>POR MAQUINARIA</tag>
+<tag>TC1.2</tag>
+<tag>VALIDO</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:42:15.117" endtime="20201130 21:42:22.961" critical="yes"></status>
+</test>
+<test id="s1-s1-s2-t3" name="Busca maquinaria por Modelo Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:42:22.981" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:42:22.981" endtime="20201130 21:42:26.512"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:22.980" endtime="20201130 21:42:26.512"></status>
+</kw>
+<kw name="Busqueda">
+<arguments>
+<arg>T590</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:26.514" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:42:26.514" endtime="20201130 21:42:27.276"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:26.514" endtime="20201130 21:42:27.276"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:27.277" endtime="20201130 21:42:27.293"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:27.277" endtime="20201130 21:42:27.293"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:27.294" level="INFO">Typing text 'T590' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:42:27.294" endtime="20201130 21:42:27.385"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:27.293" endtime="20201130 21:42:27.385"></status>
+</kw>
+<kw name="El buscador despliega opciones para autocompletar" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:[class="flex items-center p-4 hover:bg-gray-200"]</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:27.386" endtime="20201130 21:42:28.312"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:42:28.722" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:42:28.312" endtime="20201130 21:42:28.722"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:27.386" endtime="20201130 21:42:28.722"></status>
+</kw>
+<kw name="Seleccionar opción del nombre desplegado" library="search_resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[@href="/equipment/bobcat-t590"]</arg>
+</arguments>
+<msg timestamp="20201130 21:42:28.723" level="INFO">Clicking link 'xpath=//a[@href="/equipment/bobcat-t590"]'.</msg>
+<status status="PASS" starttime="20201130 21:42:28.723" endtime="20201130 21:42:28.785"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:28.722" endtime="20201130 21:42:28.785"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:26.513" endtime="20201130 21:42:28.785"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:42:28.788" endtime="20201130 21:42:31.042"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:28.787" endtime="20201130 21:42:31.043"></status>
+</kw>
+<doc>Caso de prueba que incluye Flujo Basico y Alternativo A3 - Nombre completo de modelo valido </doc>
+<tags>
+<tag>POR MODELO</tag>
+<tag>TC1.3</tag>
+<tag>VALIDO</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:42:22.978" endtime="20201130 21:42:31.045" critical="yes"></status>
+</test>
+<doc>Suite de pruebas para Rentalo.com.mx</doc>
+<status status="PASS" starttime="20201130 21:42:07.137" endtime="20201130 21:42:31.062"></status>
+</suite>
+<suite id="s1-s1-s3" name="Rentalo Scenario1" source="D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_Scenario1.robot">
+<test id="s1-s1-s3-t1" name="Busca maquinaria por nombre completo Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:42:31.164" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:42:31.164" endtime="20201130 21:42:34.581"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:31.164" endtime="20201130 21:42:34.581"></status>
+</kw>
+<kw name="Busqueda Maquinaria Valida 1">
+<arguments>
+<arg>BOBCAT T590</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:34.587" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:42:34.586" endtime="20201130 21:42:35.423"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:34.585" endtime="20201130 21:42:35.424"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:35.424" endtime="20201130 21:42:35.443"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:35.424" endtime="20201130 21:42:35.443"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:35.445" level="INFO">Typing text 'BOBCAT T590' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:42:35.445" endtime="20201130 21:42:35.588"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:35.444" endtime="20201130 21:42:35.589"></status>
+</kw>
+<kw name="El buscador despliega opciones para autocompletar" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:[class="flex items-center p-4 hover:bg-gray-200"]</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:35.590" endtime="20201130 21:42:36.248"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:42:36.631" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:42:36.248" endtime="20201130 21:42:36.631"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:35.589" endtime="20201130 21:42:36.632"></status>
+</kw>
+<kw name="Seleccionar opción del nombre desplegado" library="search_resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[@href="/equipment/bobcat-t590"]</arg>
+</arguments>
+<msg timestamp="20201130 21:42:36.633" level="INFO">Clicking link 'xpath=//a[@href="/equipment/bobcat-t590"]'.</msg>
+<status status="PASS" starttime="20201130 21:42:36.633" endtime="20201130 21:42:36.729"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:36.632" endtime="20201130 21:42:36.729"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:34.584" endtime="20201130 21:42:36.729"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:42:36.733" endtime="20201130 21:42:39.020"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:36.732" endtime="20201130 21:42:39.021"></status>
+</kw>
+<doc>Caso de prueba seleccionando del dropdown list</doc>
+<tags>
+<tag>POR MAQUINARIA</tag>
+<tag>Smoke</tag>
+<tag>TC1.1</tag>
+<tag>VALIDO</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:42:31.163" endtime="20201130 21:42:39.022" critical="yes"></status>
+</test>
+<test id="s1-s1-s3-t2" name="Busca maquinaria por nombre incompleto Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:42:39.043" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:42:39.042" endtime="20201130 21:42:42.425"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:39.041" endtime="20201130 21:42:42.425"></status>
+</kw>
+<kw name="Busqueda Maquinaria Valida 1">
+<arguments>
+<arg>BOBCAT</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:42.427" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:42:42.427" endtime="20201130 21:42:43.222"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:42.426" endtime="20201130 21:42:43.223"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:43.224" endtime="20201130 21:42:43.242"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:43.223" endtime="20201130 21:42:43.243"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:43.244" level="INFO">Typing text 'BOBCAT' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:42:43.244" endtime="20201130 21:42:43.346"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:43.243" endtime="20201130 21:42:43.347"></status>
+</kw>
+<kw name="El buscador despliega opciones para autocompletar" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:[class="flex items-center p-4 hover:bg-gray-200"]</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:43.348" endtime="20201130 21:42:43.996"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:42:44.340" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:42:43.996" endtime="20201130 21:42:44.340"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:43.347" endtime="20201130 21:42:44.340"></status>
+</kw>
+<kw name="Seleccionar opción del nombre desplegado" library="search_resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[@href="/equipment/bobcat-t590"]</arg>
+</arguments>
+<msg timestamp="20201130 21:42:44.341" level="INFO">Clicking link 'xpath=//a[@href="/equipment/bobcat-t590"]'.</msg>
+<status status="PASS" starttime="20201130 21:42:44.341" endtime="20201130 21:42:44.398"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:44.341" endtime="20201130 21:42:44.399"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:42.426" endtime="20201130 21:42:44.399"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:42:44.401" endtime="20201130 21:42:46.703"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:44.401" endtime="20201130 21:42:46.704"></status>
+</kw>
+<doc>Caso de prueba seleccionando del dropdown list</doc>
+<tags>
+<tag>POR MAQUINARIA</tag>
+<tag>Smoke</tag>
+<tag>TC1.2</tag>
+<tag>VALIDO</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:42:39.039" endtime="20201130 21:42:46.706" critical="yes"></status>
+</test>
+<test id="s1-s1-s3-t3" name="Busca maquinaria por Modelo Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:42:46.725" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:42:46.725" endtime="20201130 21:42:50.090"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:46.724" endtime="20201130 21:42:50.090"></status>
+</kw>
+<kw name="Busqueda Maquinaria Valida 1">
+<arguments>
+<arg>T590</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:50.094" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:42:50.093" endtime="20201130 21:42:51.436"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:50.092" endtime="20201130 21:42:51.437"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:51.438" endtime="20201130 21:42:51.456"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:51.437" endtime="20201130 21:42:51.457"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:51.459" level="INFO">Typing text 'T590' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:42:51.458" endtime="20201130 21:42:51.564"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:51.457" endtime="20201130 21:42:51.564"></status>
+</kw>
+<kw name="El buscador despliega opciones para autocompletar" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:[class="flex items-center p-4 hover:bg-gray-200"]</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:51.564" endtime="20201130 21:42:52.237"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:42:52.598" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:42:52.237" endtime="20201130 21:42:52.598"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:51.564" endtime="20201130 21:42:52.598"></status>
+</kw>
+<kw name="Seleccionar opción del nombre desplegado" library="search_resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[@href="/equipment/bobcat-t590"]</arg>
+</arguments>
+<msg timestamp="20201130 21:42:52.600" level="INFO">Clicking link 'xpath=//a[@href="/equipment/bobcat-t590"]'.</msg>
+<status status="PASS" starttime="20201130 21:42:52.599" endtime="20201130 21:42:52.672"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:52.599" endtime="20201130 21:42:52.673"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:50.091" endtime="20201130 21:42:52.673"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:42:52.675" endtime="20201130 21:42:54.940"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:52.674" endtime="20201130 21:42:54.942"></status>
+</kw>
+<doc>Caso de prueba seleccionando del dropdown list</doc>
+<tags>
+<tag>POR MODELO</tag>
+<tag>Smoke</tag>
+<tag>TC1.3</tag>
+<tag>VALIDO</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:42:46.722" endtime="20201130 21:42:54.944" critical="yes"></status>
+</test>
+<doc>Suite de pruebas para Rentalo.com.mx</doc>
+<status status="PASS" starttime="20201130 21:42:31.070" endtime="20201130 21:42:54.954"></status>
+</suite>
+<suite id="s1-s1-s4" name="Rentalo Scenario2" source="D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_Scenario2.robot">
+<test id="s1-s1-s4-t1" name="Busca maquinaria por nombre completo No valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:42:55.161" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:42:55.161" endtime="20201130 21:42:58.671"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:55.160" endtime="20201130 21:42:58.671"></status>
+</kw>
+<kw name="Busqueda Maquinaria No Valida 2">
+<arguments>
+<arg>BOBKAT T590</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:58.674" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:42:58.673" endtime="20201130 21:42:59.494"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:58.673" endtime="20201130 21:42:59.495"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:59.496" endtime="20201130 21:42:59.514"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:59.495" endtime="20201130 21:42:59.515"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:42:59.519" level="INFO">Typing text 'BOBKAT T590' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:42:59.517" endtime="20201130 21:42:59.656"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:59.515" endtime="20201130 21:42:59.656"></status>
+</kw>
+<kw name="El buscador no muestra resultados" library="search_resources">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${EMPTY_LIST}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:42:59.657" endtime="20201130 21:42:59.671"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:00.204" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:42:59.671" endtime="20201130 21:43:00.204"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:59.657" endtime="20201130 21:43:00.204"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:42:58.672" endtime="20201130 21:43:00.205"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:43:00.206" endtime="20201130 21:43:02.403"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:00.205" endtime="20201130 21:43:02.404"></status>
+</kw>
+<doc>Caso de prueba sin valores en dropdown list</doc>
+<tags>
+<tag>3</tag>
+<tag>NO VALIDO</tag>
+<tag>POR MAQUINARIA</tag>
+<tag>Smoke</tag>
+<tag>TC2.1</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:42:55.157" endtime="20201130 21:43:02.407" critical="yes"></status>
+</test>
+<test id="s1-s1-s4-t2" name="Busca maquinaria por nombre incompleto No Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:43:02.429" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:43:02.428" endtime="20201130 21:43:05.919"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:02.427" endtime="20201130 21:43:05.919"></status>
+</kw>
+<kw name="Busqueda Maquinaria No Valida 2">
+<arguments>
+<arg>BOCAT T</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:05.921" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:43:05.921" endtime="20201130 21:43:06.599"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:05.920" endtime="20201130 21:43:06.600"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:06.600" endtime="20201130 21:43:06.619"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:06.600" endtime="20201130 21:43:06.619"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:06.621" level="INFO">Typing text 'BOCAT T' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:43:06.620" endtime="20201130 21:43:06.735"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:06.620" endtime="20201130 21:43:06.735"></status>
+</kw>
+<kw name="El buscador no muestra resultados" library="search_resources">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${EMPTY_LIST}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:06.736" endtime="20201130 21:43:06.751"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:07.270" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:43:06.751" endtime="20201130 21:43:07.270"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:06.735" endtime="20201130 21:43:07.270"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:05.920" endtime="20201130 21:43:07.270"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:43:07.272" endtime="20201130 21:43:09.480"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:07.271" endtime="20201130 21:43:09.481"></status>
+</kw>
+<doc>Caso de prueba sin valores en dropdown list</doc>
+<tags>
+<tag>NO VALIDO</tag>
+<tag>POR MAQUINARIA</tag>
+<tag>Smoke</tag>
+<tag>TC2.2</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:43:02.425" endtime="20201130 21:43:09.482" critical="yes"></status>
+</test>
+<test id="s1-s1-s4-t3" name="Busca maquinaria por Modelo No Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:43:09.491" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:43:09.491" endtime="20201130 21:43:12.878"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:09.490" endtime="20201130 21:43:12.879"></status>
+</kw>
+<kw name="Busqueda Maquinaria No Valida 2">
+<arguments>
+<arg>XC590</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:12.884" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:43:12.883" endtime="20201130 21:43:14.307"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:12.883" endtime="20201130 21:43:14.308"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:14.309" endtime="20201130 21:43:14.327"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:14.308" endtime="20201130 21:43:14.327"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:14.329" level="INFO">Typing text 'XC590' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:43:14.328" endtime="20201130 21:43:14.434"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:14.327" endtime="20201130 21:43:14.434"></status>
+</kw>
+<kw name="El buscador no muestra resultados" library="search_resources">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${EMPTY_LIST}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:14.435" endtime="20201130 21:43:14.449"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:14.979" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:43:14.449" endtime="20201130 21:43:14.979"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:14.434" endtime="20201130 21:43:14.979"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:12.880" endtime="20201130 21:43:14.979"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:43:14.981" endtime="20201130 21:43:17.221"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:14.981" endtime="20201130 21:43:17.221"></status>
+</kw>
+<doc>Caso de prueba sin valores en dropdown list</doc>
+<tags>
+<tag>1</tag>
+<tag>NO VALIDO</tag>
+<tag>POR MAQUINARIA</tag>
+<tag>Smoke</tag>
+<tag>TC2.3</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:43:09.489" endtime="20201130 21:43:17.222" critical="yes"></status>
+</test>
+<doc>Suite de pruebas para Rentalo.com.mx</doc>
+<status status="PASS" starttime="20201130 21:42:54.989" endtime="20201130 21:43:17.228"></status>
+</suite>
+<suite id="s1-s1-s5" name="Rentalo Scenario3" source="D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_Scenario3.robot">
+<test id="s1-s1-s5-t1" name="Busca maquinaria por nombre completo Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:43:17.318" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:43:17.317" endtime="20201130 21:43:20.655"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:17.316" endtime="20201130 21:43:20.655"></status>
+</kw>
+<kw name="Busqueda Maquinaria Valida 3">
+<arguments>
+<arg>BOBCAT T590</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:20.657" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:43:20.657" endtime="20201130 21:43:21.627"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:20.656" endtime="20201130 21:43:21.628"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:21.629" endtime="20201130 21:43:21.681"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:21.628" endtime="20201130 21:43:21.681"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:21.684" level="INFO">Typing text 'BOBCAT T590' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:43:21.683" endtime="20201130 21:43:21.834"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:21.682" endtime="20201130 21:43:21.835"></status>
+</kw>
+<kw name="El buscador despliega opciones para autocompletar" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:[class="flex items-center p-4 hover:bg-gray-200"]</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:21.836" endtime="20201130 21:43:22.540"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:22.975" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:43:22.541" endtime="20201130 21:43:22.975"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:21.835" endtime="20201130 21:43:22.976"></status>
+</kw>
+<kw name="Presionar Enter" library="search_resources">
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>//*[@id="equipment-query"]</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20201130 21:43:22.978" level="INFO">Sending key(s) ('ENTER',) to //*[@id="equipment-query"] element.</msg>
+<msg timestamp="20201130 21:43:23.424" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20201130 21:43:23.424" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20201130 21:43:22.977" endtime="20201130 21:43:23.461"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:22.976" endtime="20201130 21:43:23.462"></status>
+</kw>
+<kw name="Retorna Catalogo de productos" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="catalog"]/div[2]/div/h1</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:23.464" endtime="20201130 21:43:23.571"></status>
+</kw>
+<kw name="Get All Links" library="SeleniumLibrary">
+<doc>Returns a list containing ids of all links found in current page.</doc>
+<status status="PASS" starttime="20201130 21:43:23.571" endtime="20201130 21:43:23.680"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:23.997" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:43:23.681" endtime="20201130 21:43:23.997"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:23.463" endtime="20201130 21:43:23.998"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:20.656" endtime="20201130 21:43:23.998"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:43:24.001" endtime="20201130 21:43:26.357"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:24.000" endtime="20201130 21:43:26.358"></status>
+</kw>
+<doc>Caso de prueba seleccionando del dropdown list</doc>
+<tags>
+<tag>POR MAQUINARIA</tag>
+<tag>Smoke</tag>
+<tag>TC1.1</tag>
+<tag>VALIDO</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:43:17.315" endtime="20201130 21:43:26.361" critical="yes"></status>
+</test>
+<test id="s1-s1-s5-t2" name="Busca maquinaria por nombre incompleto Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:43:26.380" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:43:26.380" endtime="20201130 21:43:29.698"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:26.379" endtime="20201130 21:43:29.698"></status>
+</kw>
+<kw name="Busqueda Maquinaria Valida 3">
+<arguments>
+<arg>BOBCAT</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:29.702" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:43:29.701" endtime="20201130 21:43:30.426"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:29.701" endtime="20201130 21:43:30.427"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:30.428" endtime="20201130 21:43:30.444"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:30.427" endtime="20201130 21:43:30.445"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:30.446" level="INFO">Typing text 'BOBCAT' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:43:30.446" endtime="20201130 21:43:30.592"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:30.445" endtime="20201130 21:43:30.592"></status>
+</kw>
+<kw name="El buscador despliega opciones para autocompletar" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:[class="flex items-center p-4 hover:bg-gray-200"]</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:30.593" endtime="20201130 21:43:31.491"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:31.886" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:43:31.492" endtime="20201130 21:43:31.886"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:30.592" endtime="20201130 21:43:31.886"></status>
+</kw>
+<kw name="Presionar Enter" library="search_resources">
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>//*[@id="equipment-query"]</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20201130 21:43:31.887" level="INFO">Sending key(s) ('ENTER',) to //*[@id="equipment-query"] element.</msg>
+<msg timestamp="20201130 21:43:32.168" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20201130 21:43:32.169" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20201130 21:43:31.887" endtime="20201130 21:43:32.215"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:31.886" endtime="20201130 21:43:32.215"></status>
+</kw>
+<kw name="Retorna Catalogo de productos" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="catalog"]/div[2]/div/h1</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:32.216" endtime="20201130 21:43:32.270"></status>
+</kw>
+<kw name="Get All Links" library="SeleniumLibrary">
+<doc>Returns a list containing ids of all links found in current page.</doc>
+<status status="PASS" starttime="20201130 21:43:32.271" endtime="20201130 21:43:32.398"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:32.749" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:43:32.399" endtime="20201130 21:43:32.750"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:32.215" endtime="20201130 21:43:32.750"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:29.700" endtime="20201130 21:43:32.750"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:43:32.752" endtime="20201130 21:43:35.099"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:32.751" endtime="20201130 21:43:35.100"></status>
+</kw>
+<doc>Caso de prueba seleccionando del dropdown list</doc>
+<tags>
+<tag>POR MAQUINARIA</tag>
+<tag>Smoke</tag>
+<tag>TC1.2</tag>
+<tag>VALIDO</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:43:26.377" endtime="20201130 21:43:35.102" critical="yes"></status>
+</test>
+<test id="s1-s1-s5-t3" name="Busca maquinaria por Modelo Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:43:35.121" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:43:35.120" endtime="20201130 21:43:38.541"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:35.119" endtime="20201130 21:43:38.542"></status>
+</kw>
+<kw name="Busqueda Maquinaria Valida 3">
+<arguments>
+<arg>T590</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:38.546" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:43:38.546" endtime="20201130 21:43:39.273"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:38.545" endtime="20201130 21:43:39.274"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:39.275" endtime="20201130 21:43:39.293"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:39.274" endtime="20201130 21:43:39.293"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:39.295" level="INFO">Typing text 'T590' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:43:39.294" endtime="20201130 21:43:39.400"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:39.294" endtime="20201130 21:43:39.401"></status>
+</kw>
+<kw name="El buscador despliega opciones para autocompletar" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:[class="flex items-center p-4 hover:bg-gray-200"]</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:39.401" endtime="20201130 21:43:40.076"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:40.410" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:43:40.077" endtime="20201130 21:43:40.410"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:39.401" endtime="20201130 21:43:40.410"></status>
+</kw>
+<kw name="Presionar Enter" library="search_resources">
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>//*[@id="equipment-query"]</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20201130 21:43:40.411" level="INFO">Sending key(s) ('ENTER',) to //*[@id="equipment-query"] element.</msg>
+<msg timestamp="20201130 21:43:40.693" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20201130 21:43:40.693" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20201130 21:43:40.411" endtime="20201130 21:43:40.706"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:40.411" endtime="20201130 21:43:40.707"></status>
+</kw>
+<kw name="Retorna Catalogo de productos" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="catalog"]/div[2]/div/h1</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:40.708" endtime="20201130 21:43:40.758"></status>
+</kw>
+<kw name="Get All Links" library="SeleniumLibrary">
+<doc>Returns a list containing ids of all links found in current page.</doc>
+<status status="PASS" starttime="20201130 21:43:40.758" endtime="20201130 21:43:40.848"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:41.204" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:43:40.848" endtime="20201130 21:43:41.204"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:40.707" endtime="20201130 21:43:41.205"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:38.544" endtime="20201130 21:43:41.205"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:43:41.208" endtime="20201130 21:43:43.460"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:41.207" endtime="20201130 21:43:43.461"></status>
+</kw>
+<doc>Caso de prueba seleccionando del dropdown list</doc>
+<tags>
+<tag>POR MODELO</tag>
+<tag>Smoke</tag>
+<tag>TC1.3</tag>
+<tag>VALIDO</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:43:35.112" endtime="20201130 21:43:43.462" critical="yes"></status>
+</test>
+<doc>Suite de pruebas para Rentalo.com.mx</doc>
+<status status="PASS" starttime="20201130 21:43:17.234" endtime="20201130 21:43:43.475"></status>
+</suite>
+<suite id="s1-s1-s6" name="Rentalo Scenario4" source="D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_Scenario4.robot">
+<test id="s1-s1-s6-t1" name="Busca maquinaria por nombre completo No valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:43:43.585" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:43:43.584" endtime="20201130 21:43:46.993"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:43.584" endtime="20201130 21:43:46.994"></status>
+</kw>
+<kw name="Busqueda Maquinaria No Valida 4">
+<arguments>
+<arg>BOBKAT T590</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:46.998" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:43:46.997" endtime="20201130 21:43:47.772"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:46.996" endtime="20201130 21:43:47.773"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:47.773" endtime="20201130 21:43:47.793"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:47.773" endtime="20201130 21:43:47.793"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:47.794" level="INFO">Typing text 'BOBKAT T590' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:43:47.794" endtime="20201130 21:43:47.930"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:47.793" endtime="20201130 21:43:47.930"></status>
+</kw>
+<kw name="El buscador no muestra resultados" library="search_resources">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${EMPTY_LIST}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:47.931" endtime="20201130 21:43:47.947"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:48.482" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:43:47.947" endtime="20201130 21:43:48.482"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:47.930" endtime="20201130 21:43:48.482"></status>
+</kw>
+<kw name="Presionar Enter" library="search_resources">
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>//*[@id="equipment-query"]</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20201130 21:43:48.483" level="INFO">Sending key(s) ('ENTER',) to //*[@id="equipment-query"] element.</msg>
+<msg timestamp="20201130 21:43:48.781" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20201130 21:43:48.781" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20201130 21:43:48.482" endtime="20201130 21:43:48.793"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:48.482" endtime="20201130 21:43:48.793"></status>
+</kw>
+<kw name="Retorna Catalogo de productos vacio" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="catalog"]/div[2]/div/h1</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:48.794" endtime="20201130 21:43:48.838"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${EMPTY_CATALOG}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:48.838" endtime="20201130 21:43:49.282"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<arguments>
+<arg>css:[class="block mb-8 rounded-lg border shadow-md overflow-hidden mx-auto"]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:49.642" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:43:49.309" endtime="20201130 21:43:49.642"></status>
+</kw>
+<msg timestamp="20201130 21:43:49.814" level="FAIL">Page should not have contained element 'css:[class="block mb-8 rounded-lg border shadow-md overflow-hidden mx-auto"]'.</msg>
+<status status="FAIL" starttime="20201130 21:43:49.282" endtime="20201130 21:43:49.814"></status>
+</kw>
+<status status="FAIL" starttime="20201130 21:43:48.794" endtime="20201130 21:43:49.814"></status>
+</kw>
+<status status="FAIL" starttime="20201130 21:43:46.995" endtime="20201130 21:43:49.815"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:43:49.816" endtime="20201130 21:43:52.123"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:49.815" endtime="20201130 21:43:52.124"></status>
+</kw>
+<doc>Caso de prueba sin valores en dropdown list</doc>
+<tags>
+<tag>3</tag>
+<tag>NO VALIDO</tag>
+<tag>POR MAQUINARIA</tag>
+<tag>Smoke</tag>
+<tag>TC2.1</tag>
+</tags>
+<status status="FAIL" starttime="20201130 21:43:43.583" endtime="20201130 21:43:52.125" critical="yes">Page should not have contained element 'css:[class="block mb-8 rounded-lg border shadow-md overflow-hidden mx-auto"]'.</status>
+</test>
+<test id="s1-s1-s6-t2" name="Busca maquinaria por nombre incompleto No Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:43:52.137" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:43:52.137" endtime="20201130 21:43:55.607"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:52.136" endtime="20201130 21:43:55.607"></status>
+</kw>
+<kw name="Busqueda Maquinaria No Valida 4">
+<arguments>
+<arg>BOCAT T</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:55.610" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:43:55.610" endtime="20201130 21:43:56.978"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:55.609" endtime="20201130 21:43:56.979"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:56.979" endtime="20201130 21:43:56.996"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:56.979" endtime="20201130 21:43:56.996"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:43:56.997" level="INFO">Typing text 'BOCAT T' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:43:56.997" endtime="20201130 21:43:57.119"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:56.996" endtime="20201130 21:43:57.119"></status>
+</kw>
+<kw name="El buscador no muestra resultados" library="search_resources">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${EMPTY_LIST}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:57.120" endtime="20201130 21:43:57.137"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:57.667" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:43:57.137" endtime="20201130 21:43:57.667"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:57.119" endtime="20201130 21:43:57.668"></status>
+</kw>
+<kw name="Presionar Enter" library="search_resources">
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>//*[@id="equipment-query"]</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20201130 21:43:57.669" level="INFO">Sending key(s) ('ENTER',) to //*[@id="equipment-query"] element.</msg>
+<msg timestamp="20201130 21:43:57.960" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20201130 21:43:57.960" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20201130 21:43:57.668" endtime="20201130 21:43:57.973"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:57.668" endtime="20201130 21:43:57.973"></status>
+</kw>
+<kw name="Retorna Catalogo de productos vacio" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="catalog"]/div[2]/div/h1</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:57.974" endtime="20201130 21:43:58.019"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${EMPTY_CATALOG}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:43:58.019" endtime="20201130 21:43:58.728"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<arguments>
+<arg>css:[class="block mb-8 rounded-lg border shadow-md overflow-hidden mx-auto"]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:43:59.067" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:43:58.757" endtime="20201130 21:43:59.067"></status>
+</kw>
+<msg timestamp="20201130 21:43:59.068" level="FAIL">Page should not have contained element 'css:[class="block mb-8 rounded-lg border shadow-md overflow-hidden mx-auto"]'.</msg>
+<status status="FAIL" starttime="20201130 21:43:58.729" endtime="20201130 21:43:59.068"></status>
+</kw>
+<status status="FAIL" starttime="20201130 21:43:57.973" endtime="20201130 21:43:59.068"></status>
+</kw>
+<status status="FAIL" starttime="20201130 21:43:55.608" endtime="20201130 21:43:59.068"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:43:59.070" endtime="20201130 21:44:01.840"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:43:59.069" endtime="20201130 21:44:01.840"></status>
+</kw>
+<doc>Caso de prueba sin valores en dropdown list</doc>
+<tags>
+<tag>NO VALIDO</tag>
+<tag>POR MAQUINARIA</tag>
+<tag>Smoke</tag>
+<tag>TC2.2</tag>
+</tags>
+<status status="FAIL" starttime="20201130 21:43:52.134" endtime="20201130 21:44:01.841" critical="yes">Page should not have contained element 'css:[class="block mb-8 rounded-lg border shadow-md overflow-hidden mx-auto"]'.</status>
+</test>
+<test id="s1-s1-s6-t3" name="Busca maquinaria por Modelo No Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:44:01.852" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:44:01.851" endtime="20201130 21:44:05.222"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:01.851" endtime="20201130 21:44:05.222"></status>
+</kw>
+<kw name="Busqueda Maquinaria No Valida 4">
+<arguments>
+<arg>XC590</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:44:05.224" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:44:05.224" endtime="20201130 21:44:05.993"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:05.223" endtime="20201130 21:44:05.993"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:05.994" endtime="20201130 21:44:06.010"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:05.994" endtime="20201130 21:44:06.010"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:44:06.012" level="INFO">Typing text 'XC590' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:44:06.011" endtime="20201130 21:44:06.121"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:06.011" endtime="20201130 21:44:06.121"></status>
+</kw>
+<kw name="El buscador no muestra resultados" library="search_resources">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${EMPTY_LIST}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:06.122" endtime="20201130 21:44:06.133"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:44:06.623" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:44:06.133" endtime="20201130 21:44:06.624"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:06.121" endtime="20201130 21:44:06.624"></status>
+</kw>
+<kw name="Presionar Enter" library="search_resources">
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>//*[@id="equipment-query"]</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20201130 21:44:06.625" level="INFO">Sending key(s) ('ENTER',) to //*[@id="equipment-query"] element.</msg>
+<msg timestamp="20201130 21:44:06.915" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20201130 21:44:06.915" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20201130 21:44:06.624" endtime="20201130 21:44:06.937"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:06.624" endtime="20201130 21:44:06.938"></status>
+</kw>
+<kw name="Retorna Catalogo de productos vacio" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="catalog"]/div[2]/div/h1</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:06.939" endtime="20201130 21:44:06.976"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${EMPTY_CATALOG}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:06.976" endtime="20201130 21:44:07.427"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<arguments>
+<arg>css:[class="block mb-8 rounded-lg border shadow-md overflow-hidden mx-auto"]</arg>
+</arguments>
+<msg timestamp="20201130 21:44:07.440" level="INFO">Current page does not contain element 'css:[class="block mb-8 rounded-lg border shadow-md overflow-hidden mx-auto"]'.</msg>
+<status status="PASS" starttime="20201130 21:44:07.427" endtime="20201130 21:44:07.440"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:44:07.750" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:44:07.441" endtime="20201130 21:44:07.750"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:06.938" endtime="20201130 21:44:07.750"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:05.223" endtime="20201130 21:44:07.750"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:44:07.755" endtime="20201130 21:44:09.970"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:07.755" endtime="20201130 21:44:09.970"></status>
+</kw>
+<doc>Caso de prueba sin valores en dropdown list</doc>
+<tags>
+<tag>1</tag>
+<tag>NO VALIDO</tag>
+<tag>POR MAQUINARIA</tag>
+<tag>Smoke</tag>
+<tag>TC2.3</tag>
+</tags>
+<status status="PASS" starttime="20201130 21:44:01.849" endtime="20201130 21:44:09.971" critical="yes"></status>
+</test>
+<doc>Suite de pruebas para Rentalo.com.mx</doc>
+<status status="FAIL" starttime="20201130 21:43:43.481" endtime="20201130 21:44:09.978"></status>
+</suite>
+<suite id="s1-s1-s7" name="Rentalo Scenario5" source="D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_Scenario5.robot">
+<test id="s1-s1-s7-t1" name="Busca maquinaria por nombre completo Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:44:10.071" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:44:10.071" endtime="20201130 21:44:13.512"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:10.070" endtime="20201130 21:44:13.513"></status>
+</kw>
+<kw name="Busqueda Maquinaria Valida 5">
+<arguments>
+<arg>BOBCAT T590</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:44:13.519" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:44:13.519" endtime="20201130 21:44:14.859"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:13.517" endtime="20201130 21:44:14.859"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:14.860" endtime="20201130 21:44:14.875"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:14.859" endtime="20201130 21:44:14.876"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:44:14.877" level="INFO">Typing text 'BOBCAT T590' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:44:14.877" endtime="20201130 21:44:14.984"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:14.876" endtime="20201130 21:44:14.984"></status>
+</kw>
+<kw name="El buscador despliega opciones para autocompletar" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:[class="flex items-center p-4 hover:bg-gray-200"]</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:14.985" endtime="20201130 21:44:15.673"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:44:16.024" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:44:15.673" endtime="20201130 21:44:16.024"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:14.984" endtime="20201130 21:44:16.024"></status>
+</kw>
+<kw name="Presionar Boton de Busqueda" library="search_resources">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div</arg>
+</arguments>
+<msg timestamp="20201130 21:44:16.049" level="INFO">Element 'xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div' is displayed.</msg>
+<status status="PASS" starttime="20201130 21:44:16.025" endtime="20201130 21:44:16.049"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<arguments>
+<arg>xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:16.049" endtime="20201130 21:44:16.086"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div</arg>
+</arguments>
+<msg timestamp="20201130 21:44:16.086" level="INFO">Clicking element 'xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div'.</msg>
+<status status="PASS" starttime="20201130 21:44:16.086" endtime="20201130 21:44:16.127"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:16.024" endtime="20201130 21:44:16.127"></status>
+</kw>
+<kw name="Retorna Catalogo de productos" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="catalog"]/div[2]/div/h1</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:44:21.693" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:44:21.333" endtime="20201130 21:44:21.693"></status>
+</kw>
+<msg timestamp="20201130 21:44:21.816" level="FAIL">Element 'xpath=//*[@id="catalog"]/div[2]/div/h1' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20201130 21:44:16.128" endtime="20201130 21:44:21.817"></status>
+</kw>
+<status status="FAIL" starttime="20201130 21:44:16.127" endtime="20201130 21:44:21.817"></status>
+</kw>
+<status status="FAIL" starttime="20201130 21:44:13.516" endtime="20201130 21:44:21.817"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:44:21.819" endtime="20201130 21:44:24.057"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:21.819" endtime="20201130 21:44:24.058"></status>
+</kw>
+<doc>Caso de prueba seleccionando del dropdown list</doc>
+<tags>
+<tag>POR MAQUINARIA</tag>
+<tag>Smoke</tag>
+<tag>TC1.1</tag>
+<tag>VALIDO</tag>
+</tags>
+<status status="FAIL" starttime="20201130 21:44:10.068" endtime="20201130 21:44:24.060" critical="yes">Element 'xpath=//*[@id="catalog"]/div[2]/div/h1' did not appear in 5 seconds.</status>
+</test>
+<test id="s1-s1-s7-t2" name="Busca maquinaria por nombre incompleto Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:44:24.086" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:44:24.086" endtime="20201130 21:44:27.492"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:24.085" endtime="20201130 21:44:27.492"></status>
+</kw>
+<kw name="Busqueda Maquinaria Valida 5">
+<arguments>
+<arg>BOBCAT</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:44:27.497" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:44:27.497" endtime="20201130 21:44:28.265"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:27.495" endtime="20201130 21:44:28.265"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:28.266" endtime="20201130 21:44:28.282"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:28.266" endtime="20201130 21:44:28.282"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:44:28.284" level="INFO">Typing text 'BOBCAT' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:44:28.283" endtime="20201130 21:44:28.402"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:28.283" endtime="20201130 21:44:28.402"></status>
+</kw>
+<kw name="El buscador despliega opciones para autocompletar" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:[class="flex items-center p-4 hover:bg-gray-200"]</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:28.403" endtime="20201130 21:44:29.062"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:44:29.430" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:44:29.062" endtime="20201130 21:44:29.430"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:28.403" endtime="20201130 21:44:29.430"></status>
+</kw>
+<kw name="Presionar Boton de Busqueda" library="search_resources">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div</arg>
+</arguments>
+<msg timestamp="20201130 21:44:29.455" level="INFO">Element 'xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div' is displayed.</msg>
+<status status="PASS" starttime="20201130 21:44:29.430" endtime="20201130 21:44:29.455"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<arguments>
+<arg>xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:29.455" endtime="20201130 21:44:29.479"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div</arg>
+</arguments>
+<msg timestamp="20201130 21:44:29.480" level="INFO">Clicking element 'xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div'.</msg>
+<status status="PASS" starttime="20201130 21:44:29.479" endtime="20201130 21:44:29.518"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:29.430" endtime="20201130 21:44:29.518"></status>
+</kw>
+<kw name="Retorna Catalogo de productos" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="catalog"]/div[2]/div/h1</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:44:34.997" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-25.png"&gt;&lt;img src="selenium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:44:34.634" endtime="20201130 21:44:34.997"></status>
+</kw>
+<msg timestamp="20201130 21:44:34.998" level="FAIL">Element 'xpath=//*[@id="catalog"]/div[2]/div/h1' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20201130 21:44:29.519" endtime="20201130 21:44:34.998"></status>
+</kw>
+<status status="FAIL" starttime="20201130 21:44:29.519" endtime="20201130 21:44:34.998"></status>
+</kw>
+<status status="FAIL" starttime="20201130 21:44:27.494" endtime="20201130 21:44:34.998"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:44:35.000" endtime="20201130 21:44:38.218"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:34.999" endtime="20201130 21:44:38.219"></status>
+</kw>
+<doc>Caso de prueba seleccionando del dropdown list</doc>
+<tags>
+<tag>POR MAQUINARIA</tag>
+<tag>Smoke</tag>
+<tag>TC1.2</tag>
+<tag>VALIDO</tag>
+</tags>
+<status status="FAIL" starttime="20201130 21:44:24.083" endtime="20201130 21:44:38.220" critical="yes">Element 'xpath=//*[@id="catalog"]/div[2]/div/h1' did not appear in 5 seconds.</status>
+</test>
+<test id="s1-s1-s7-t3" name="Busca maquinaria por Modelo Valido">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201130 21:44:38.234" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20201130 21:44:38.234" endtime="20201130 21:44:41.711"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:38.233" endtime="20201130 21:44:41.711"></status>
+</kw>
+<kw name="Busqueda Maquinaria Valida 5">
+<arguments>
+<arg>T590</arg>
+</arguments>
+<kw name="Cargar Website" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20201130 21:44:41.713" level="INFO">Opening url 'https://rentalo.com.mx/'</msg>
+<status status="PASS" starttime="20201130 21:44:41.713" endtime="20201130 21:44:42.570"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:41.713" endtime="20201130 21:44:42.570"></status>
+</kw>
+<kw name="Verificar Website cargado" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${HOMEPAGE_TITLE}</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:42.572" endtime="20201130 21:44:42.589"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:42.571" endtime="20201130 21:44:42.589"></status>
+</kw>
+<kw name="Insertar Nombre de Máquina completo" library="search_resources">
+<arguments>
+<arg>${machinename}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=equipment-query</arg>
+<arg>${machinename}</arg>
+</arguments>
+<msg timestamp="20201130 21:44:42.591" level="INFO">Typing text 'T590' into text field 'id=equipment-query'.</msg>
+<status status="PASS" starttime="20201130 21:44:42.590" endtime="20201130 21:44:42.714"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:42.590" endtime="20201130 21:44:42.714"></status>
+</kw>
+<kw name="El buscador despliega opciones para autocompletar" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:[class="flex items-center p-4 hover:bg-gray-200"]</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:42.715" endtime="20201130 21:44:43.654"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:44:44.004" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:44:43.654" endtime="20201130 21:44:44.004"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:42.714" endtime="20201130 21:44:44.005"></status>
+</kw>
+<kw name="Presionar Boton de Busqueda" library="search_resources">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div</arg>
+</arguments>
+<msg timestamp="20201130 21:44:44.036" level="INFO">Element 'xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div' is displayed.</msg>
+<status status="PASS" starttime="20201130 21:44:44.005" endtime="20201130 21:44:44.036"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<arguments>
+<arg>xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div</arg>
+</arguments>
+<status status="PASS" starttime="20201130 21:44:44.037" endtime="20201130 21:44:44.058"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div</arg>
+</arguments>
+<msg timestamp="20201130 21:44:44.059" level="INFO">Clicking element 'xpath=//*[@id="home"]/section[1]/div/div/div/div[1]/div'.</msg>
+<status status="PASS" starttime="20201130 21:44:44.058" endtime="20201130 21:44:44.102"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:44.005" endtime="20201130 21:44:44.103"></status>
+</kw>
+<kw name="Retorna Catalogo de productos" library="search_resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="catalog"]/div[2]/div/h1</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201130 21:44:49.564" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201130 21:44:49.169" endtime="20201130 21:44:49.564"></status>
+</kw>
+<msg timestamp="20201130 21:44:49.565" level="FAIL">Element 'xpath=//*[@id="catalog"]/div[2]/div/h1' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20201130 21:44:44.104" endtime="20201130 21:44:49.565"></status>
+</kw>
+<status status="FAIL" starttime="20201130 21:44:44.103" endtime="20201130 21:44:49.565"></status>
+</kw>
+<status status="FAIL" starttime="20201130 21:44:41.712" endtime="20201130 21:44:49.565"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201130 21:44:49.567" endtime="20201130 21:44:51.815"></status>
+</kw>
+<status status="PASS" starttime="20201130 21:44:49.567" endtime="20201130 21:44:51.815"></status>
+</kw>
+<doc>Caso de prueba seleccionando del dropdown list</doc>
+<tags>
+<tag>POR MODELO</tag>
+<tag>Smoke</tag>
+<tag>TC1.3</tag>
+<tag>VALIDO</tag>
+</tags>
+<status status="FAIL" starttime="20201130 21:44:38.231" endtime="20201130 21:44:51.817" critical="yes">Element 'xpath=//*[@id="catalog"]/div[2]/div/h1' did not appear in 5 seconds.</status>
+</test>
+<doc>Suite de pruebas para Rentalo.com.mx</doc>
+<status status="FAIL" starttime="20201130 21:44:09.989" endtime="20201130 21:44:51.824"></status>
+</suite>
+<status status="FAIL" starttime="20201130 21:42:00.649" endtime="20201130 21:44:51.831"></status>
+</suite>
+<status status="FAIL" starttime="20201130 21:42:00.620" endtime="20201130 21:44:51.856"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="13" fail="6">Critical Tests</stat>
+<stat pass="13" fail="6">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0">1</stat>
+<stat pass="1" fail="1">3</stat>
+<stat pass="4" fail="2">NO VALIDO</stat>
+<stat pass="10" fail="4">POR MAQUINARIA</stat>
+<stat pass="3" fail="1">POR MODELO</stat>
+<stat pass="10" fail="5">Smoke</stat>
+<stat pass="3" fail="1">TC1.1</stat>
+<stat pass="3" fail="1">TC1.2</stat>
+<stat pass="3" fail="1">TC1.3</stat>
+<stat pass="1" fail="1">TC2.1</stat>
+<stat pass="1" fail="1">TC2.2</stat>
+<stat pass="2" fail="0">TC2.3</stat>
+<stat pass="9" fail="3">VALIDO</stat>
+</tag>
+<suite>
+<stat pass="13" fail="6" id="s1" name="RENTALO-MX">RENTALO-MX</stat>
+<stat pass="13" fail="6" id="s1-s1" name="Tests">RENTALO-MX.Tests</stat>
+<stat pass="0" fail="1" id="s1-s1-s1" name="Rentalo FlujoAlternativo">RENTALO-MX.Tests.Rentalo FlujoAlternativo</stat>
+<stat pass="3" fail="0" id="s1-s1-s2" name="Rentalo FlujoBasico">RENTALO-MX.Tests.Rentalo FlujoBasico</stat>
+<stat pass="3" fail="0" id="s1-s1-s3" name="Rentalo Scenario1">RENTALO-MX.Tests.Rentalo Scenario1</stat>
+<stat pass="3" fail="0" id="s1-s1-s4" name="Rentalo Scenario2">RENTALO-MX.Tests.Rentalo Scenario2</stat>
+<stat pass="3" fail="0" id="s1-s1-s5" name="Rentalo Scenario3">RENTALO-MX.Tests.Rentalo Scenario3</stat>
+<stat pass="1" fail="2" id="s1-s1-s6" name="Rentalo Scenario4">RENTALO-MX.Tests.Rentalo Scenario4</stat>
+<stat pass="0" fail="3" id="s1-s1-s7" name="Rentalo Scenario5">RENTALO-MX.Tests.Rentalo Scenario5</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20201130 21:42:00.502" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Resources\PO\TopNav.robot' on line 9: Invalid variable name '${ITEM_NAME} = BOBCAT T590'.</msg>
+<msg timestamp="20201130 21:42:00.503" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Resources\PO\TopNav.robot' on line 11: Invalid variable name '${ITEM_PRICE_RENT} = Precios de Renta'.</msg>
+<msg timestamp="20201130 21:42:00.515" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Resources\PO\TopNav.robot' on line 12: Invalid variable name '${ITEM_PRICE_DAILY} = Renta por Día'.</msg>
+<msg timestamp="20201130 21:42:00.518" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Resources\PO\TopNav.robot' on line 13: Invalid variable name '${ITEM_PRICE_WEEKLY} = Renta por Semana'.</msg>
+<msg timestamp="20201130 21:42:00.520" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Resources\PO\TopNav.robot' on line 14: Invalid variable name '${ITEM_PRICE_MONTHLY} = Renta por Mes'.</msg>
+<msg timestamp="20201130 21:42:00.919" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Resources\PO\TopNav.robot' on line 9: Invalid variable name '${ITEM_NAME} = BOBCAT T590'.</msg>
+<msg timestamp="20201130 21:42:00.920" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Resources\PO\TopNav.robot' on line 11: Invalid variable name '${ITEM_PRICE_RENT} = Precios de Renta'.</msg>
+<msg timestamp="20201130 21:42:00.931" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Resources\PO\TopNav.robot' on line 12: Invalid variable name '${ITEM_PRICE_DAILY} = Renta por Día'.</msg>
+<msg timestamp="20201130 21:42:00.934" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Resources\PO\TopNav.robot' on line 13: Invalid variable name '${ITEM_PRICE_WEEKLY} = Renta por Semana'.</msg>
+<msg timestamp="20201130 21:42:00.937" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Resources\PO\TopNav.robot' on line 14: Invalid variable name '${ITEM_PRICE_MONTHLY} = Renta por Mes'.</msg>
+<msg timestamp="20201130 21:42:00.953" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_FlujoAlternativo.robot' on line 8: Resource file '..\Resources\PO\LandigPage.robot' does not exist.</msg>
+<msg timestamp="20201130 21:42:01.593" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: XLRDError: No sheet named &lt;'NO VALIDOS'&gt;</msg>
+<msg timestamp="20201130 21:42:07.164" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_FlujoBasico.robot' on line 8: Resource file '..\Resources\PO\LandigPage.robot' does not exist.</msg>
+<msg timestamp="20201130 21:42:31.098" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_Scenario1.robot' on line 8: Resource file '..\Resources\PO\LandigPage.robot' does not exist.</msg>
+<msg timestamp="20201130 21:42:55.015" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_Scenario2.robot' on line 8: Resource file '..\Resources\PO\LandigPage.robot' does not exist.</msg>
+<msg timestamp="20201130 21:43:17.256" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_Scenario3.robot' on line 8: Resource file '..\Resources\PO\LandigPage.robot' does not exist.</msg>
+<msg timestamp="20201130 21:43:43.502" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_Scenario4.robot' on line 8: Resource file '..\Resources\PO\LandigPage.robot' does not exist.</msg>
+<msg timestamp="20201130 21:44:10.009" level="ERROR">Error in file 'D:\Projects\Automation\Robot Framewrok\RENTALO-MX\Tests\Rentalo_Scenario5.robot' on line 8: Resource file '..\Resources\PO\LandigPage.robot' does not exist.</msg>
+</errors>
+</robot>
