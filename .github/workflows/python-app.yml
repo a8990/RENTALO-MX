@@ -23,6 +23,8 @@ jobs:
             pip install selenium
             pip install robotframework
             pip install robotframework-selenium2library
+            pip install --upgrade robotframework-datadriver
+	          
         - name: Execute tests
           uses: joonvena/robotframework-docker-action@v0.1
           env:
