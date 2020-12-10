@@ -24,6 +24,7 @@ jobs:
             pip install robotframework
             pip install robotframework-selenium2library
             pip install robotframework-datadriver
+            pip install -U robotframework-datadriver[XLS]
 
         - name: Execute tests
           uses: a8990/docker-robot-framework@master
