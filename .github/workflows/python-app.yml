@@ -24,14 +24,14 @@ jobs:
             pip install robotframework
             pip install robotframework-selenium2library
             pip install robotframework-datadriver
-            pip install -U robotframework-datadriver[XLS]
+            pip install --upgrade robotframework-datadriver[XLS]
 
         - name: Execute tests
           uses: a8990/docker-robot-framework@master
           env:
             BROWSER: chrome
             ROBOT_TESTS_DIR: ${{ github.workspace }}/Tests
-            #ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
+            ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
         - name: Upload test results
           uses: actions/upload-artifact@v1
           if: always()
