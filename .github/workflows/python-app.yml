@@ -12,6 +12,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v2
+        - name: Data  tests
+          uses: Snooz82/robotframework-datadriver@master
         - name: Set up Python 3.8
           uses: actions/setup-python@v2
           with:
@@ -24,8 +26,7 @@ jobs:
             pip install robotframework
             pip install robotframework-selenium2library
             pip install robotframework-datadriver
-        - name: Data  tests
-          uses: Snooz82/robotframework-datadriver@master
+
         - name: Execute tests
           uses: joonvena/robotframework-docker-action@v0.1
           env:
