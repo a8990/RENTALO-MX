@@ -5,7 +5,7 @@ Library           DataDriver    file=RENTALO_MX.xlsx    sheet_name=NO VALIDOS
 Resource  ../Resources/search_resources.robot
 Resource  ../Resources/Common.robot  # necessary for Setup & Teardown
 Resource  ../Resources/RentaloApp.robot  # necessary for lower level keywords in test cases
-Resource  ../Resources/PO/LandigPage.robot
+Resource  ../Resources/PO/LandingPage.robot
 Test Setup  Begin Web Test
 Test Teardown  End Web Test
 
