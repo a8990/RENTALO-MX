@@ -25,7 +25,7 @@ jobs:
             pip install robotframework-selenium2library
             pip install robotframework-datadriver
         - name: Data  tests
-          uses: Snooz82/robotframework-datadriver
+          uses: Snooz82/robotframework-datadriver@master
         - name: Execute tests
           uses: joonvena/robotframework-docker-action@v0.1
           env:
