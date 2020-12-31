@@ -27,7 +27,7 @@ jobs:
             pip install --upgrade robotframework-datadriver[XLS]
 
         - name: Execute tests
-          uses: a8990/docker-robot-framework@master
+          uses: acontre200/robotframework:version1
           env:
             BROWSER: chrome
             ROBOT_TESTS_DIR: ${{ github.workspace }}/Tests
